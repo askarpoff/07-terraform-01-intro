@@ -48,7 +48,14 @@
 Установите терраформ при помощи менеджера пакетов используемого в вашей операционной системе.
 В виде результата этой задачи приложите вывод команды `terraform --version`.
 ### Ответ:
+```bash
+root@debian:~# terraform -v
+Terraform v1.3.4
+on linux_amd64
 
+Your version of Terraform is out of date! The latest version
+is 1.3.6. You can update by downloading from https://www.terraform.io/downloads.html
+```
 ## Задача 3. Поддержка легаси кода. 
 
 В какой-то момент вы обновили терраформ до новой версии, например с 0.12 до 0.13. 
@@ -59,3 +66,22 @@
 В виде результата этой задачи приложите вывод `--version` двух версий терраформа доступных на вашем компьютере 
 или виртуальной машине.
 ### Ответ:
+```bash
+root@debian:~# tfswitch 1.2.0
+Downloading to: /root/.terraform.versions
+Switched terraform to version "1.2.0"
+root@debian:~# terraform -v
+Terraform v1.2.0
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.3.6. You can update by downloading from https://www.terraform.io/downloads.html
+root@debian:~# tfswitch 1.3.6
+Downloading to: /root/.terraform.versions
+19466755 bytes downloaded
+Switched terraform to version "1.3.6"
+root@debian:~# terraform -v
+Terraform v1.3.6
+on linux_amd64
+
+```
